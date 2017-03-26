@@ -17,19 +17,26 @@ init_app()
 
 
 # -------------------------------------------------------------------
+"""
 # Part 2: Discussion Questions
 
 
 # 1. What is the datatype of the returned value of
 # ``Brand.query.filter_by(name='Ford')``?
 
+This query above will return to me an object (an instance) of the Brand class.
 
 
 # 2. In your own words, what is an association table, and what type of
 # relationship (many to one, many to many, one to one, etc.) does an
 # association table manage?
 
+An association table manages what would be a one-to-one table. It acts as a middle
+table, however, it provides no new information. It will typically consist of
+a primary key (autoincremented serial number), an id from one table as a foreign key, 
+and an id from the second table also as a foreign key.
 
+"""
 
 
 # -------------------------------------------------------------------
