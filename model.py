@@ -20,12 +20,12 @@ class Brand(db.Model):
     def __repr__ (self):
         """representation of brand objects for human eyes."""
 
-        return "<brand information: brand_id= %d, name= %s, founded=%d, hq=%s, discontinued=%d>" % (self.brand_id, self.name, self.founded, self.hq, self.discontinued)
+        return "<brand information: brand_id={}, name={}, founded={}, hq={}, discontinued={}>".format(self.brand_id, self.name, self.founded, self.headquarters, self.discontinued)
 
     brand_id = db.Column(db.String(5), primary_key=True)
     name = db.Column(db.String(20), nullable=False)
     founded = db.Column(db.Integer, nullable=True)
-    hq = db.Column(db.String(50), nullable=True)
+    headquarters = db.Column(db.String(50), nullable=True)
     discontinued = db.Column(db.Integer, nullable=True)
 
 
@@ -37,7 +37,7 @@ class Model(db.Model):
     def __repr__ (self):
         """car model representation."""
 
-        return "<Car model info: model_id=%d, year=%d, brand_id=%s, name=%s>" % (self.model_id, self.year, self.brand_id, self.name)
+        return "<Car model info: model_id={}, year={}, brand_id={}, name={}>".format(self.model_id, self.year, self.brand_id, self.name)
 
     model_id = db.Column(db.Integer, autoincrement=True, primary_key=True) 
     year = db.Column(db.Integer, nullable=False)
