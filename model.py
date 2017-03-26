@@ -44,7 +44,7 @@ class Model(db.Model):
     brand_id = db.Column(db.String(10), db.ForeignKey('brands.brand_id'), nullable=False)
     name = db.Column(db.String(20), nullable=False)
 
-    branding_id = db.relationship("Brand", backref=db.backref("models"))
+    brands = db.relationship("Brand", backref=db.backref("models", uselist=False))
 
 # End Part 1
 
